@@ -13,4 +13,46 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-family), system-ui, sans-serif;
+  font-variation-settings: var(--font-weight-txt);
+  background-image: var(--gradient-horisontal),
+  var(--gradient-vertical),
+  var(--gradient);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 100px 0;
+ 
+}
+
+
+/* ---ШАКПКА--------------------------------------------------------------------------------------------------------------------------- */
+
+.header {
+inline-size: var(--inline-size);
+margin: 0 auto;
+background-color: #FFFFFF;
+padding: clamp(122px, 10vw, 130px) clamp(16px, calc(-21.324px + 9.953vw), 122px);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 20px;
+border: 2px solid #000;
+}
+
+.header_logo {
+  font-family: var(--font-family-accent), system-ui, sans-serif;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header_title {
+font-family: var(--font-family-accent), system-ui, sans-serif;
+font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+/* --- MAIN ------------------------------------------------------------------------------------------------------------------------------------ */
+
+.main {
+margin: 0 auto;
+inline-size: var(--inline-size);
 }
