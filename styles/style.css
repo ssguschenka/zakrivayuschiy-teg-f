@@ -18,14 +18,13 @@
     var(--gradient);
   background-size: cover;
   background-attachment: fixed;
-  padding: 100px 0;
 }
 
 /* ---ШАКПКА--------------------------------------------------------------------------------------------------------------------------- */
 
 .header {
   inline-size: var(--inline-size);
-  margin: 0 auto;
+  margin: 100px auto;
   background-color: var(--background-color);
   padding: clamp(120px, 10vw, 128px)
     clamp(16px, calc(-21.676px + 10.047vw), 122px);
@@ -61,7 +60,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 50.3px;
-  padding: 100px 0;
+  padding: 0 0 100px 0;
 }
 
 /* ---КАРТОЧКИ-------------------------------------------------------------------------- */
