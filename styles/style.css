@@ -392,6 +392,7 @@
 #dialog_discetta[open] {
   inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
   min-inline-size: 341px;
+  max-block-size: 191px;
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr min-content;
