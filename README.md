@@ -1,1 +1,1 @@
-https://ssguschenka.github.io/zakrivayuschiy-teg-f/
+https://github.com/ssguschenka/zakrivayuschiy-teg-f
