@@ -11,4 +11,6 @@
     --block-size-card: clamp(371px, calc(255.859px + 30.704vw), 698px);
     --background-color: #FFFFFF;
     --font-color: #000000;
+    --contour-color: #000000;
+    --animation-fill-color: red;
 }
