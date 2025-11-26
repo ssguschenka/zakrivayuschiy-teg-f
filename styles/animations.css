@@ -10,7 +10,7 @@
 
 */
 
-@keyframes larger-heart {
+@keyframes increaseIconSize {
   from {
     transform: scale(1);
   }
@@ -20,7 +20,7 @@
   }
 }
 
-@keyframes sparks {
+@keyframes appearanceOfSparks {
     to {
         opacity: 1;
     }

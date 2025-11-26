@@ -20,6 +20,44 @@
   background-attachment: fixed;
 }
 
+.button {
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--font-color);
+  background-color: var(--background-color);
+  text-align: center;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--font-color);
+}
+
+.button::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  background-color: var(--font-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+
 /* ---ШАКПКА--------------------------------------------------------------------------------------------------------------------------- */
 
 .header {
@@ -41,6 +79,8 @@
   font-size: clamp(49px, calc(43.366px + 1.502vw), 65px);
   color: var(--font-color), #000000;
   line-height: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .header_title {
@@ -92,42 +132,44 @@
 .container_image {
   position: relative;
   block-size: var(--block-size-card);
-  border-block-end: 1px solid var(--font-color);
+  border-block-end: 2px solid var(--font-color);
   overflow: hidden;
 }
 
 .card_image {
+  object-fit: cover;
+  object-position: center;
   inline-size: 100%;
   block-size: 100%;
 }
 
 /* ---ФИЛЬТРЫ КАРТИНОК-------------------------------------------------------------------- */
 
-.img_fear {
+.filter-grayscale {
   filter: grayscale(80%) brightness(1.4) contrast(90%);
 }
 
-.img_luck {
+.filter-saturate {
   filter: saturate(380%);
 }
 
-.img_ideal {
+.filter-hue-rotate {
   filter: hue-rotate(30deg);
 }
 
-.img_environment {
+.filter-invert {
   filter: invert(100%) contrast(60%);
 }
 
-.img_solution {
+.filter-sepia {
   filter: sepia(0.9);
 }
 
-.img_concentration {
+.filter-blur {
   filter: blur(15px);
 }
 
-.img_end {
+.filter-multy {
   filter: hue-rotate(85deg) contrast(44%) blur(1.7px) saturate(150%);
 }
 
@@ -184,7 +226,7 @@
   align-items: center;
 }
 
-/*СЕРДЦЕ И ЕГО АНИМВЦИЯ------------------------------------------------------------------ */
+/*СЕРДЦЕ И ЕГО АНИМAЦИЯ------------------------------------------------------------------ */
 
 .contour {
   fill: var(--contour-color);
@@ -246,16 +288,17 @@
 
 .like-icon.is-liked {
   transform-origin: center;
-  animation: larger-heart 0.3s ease-in 0.1s;
+  animation: increaseIconSize 0.3s ease-in 0.1s;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s;
+  animation: appearanceOfSparks 0.3s ease-in 0.3s;
 }
 
 .card__icon-button {
   background-color: transparent;
   border: none;
+  outline: 2px solid transparent;
   max-height: 32px;
   padding: 0;
   transition: outline 0.3s ease;
@@ -269,44 +312,11 @@
   outline: 2px solid var(--font-color);
 }
 
+
 .card__like-button {
-  background-color: transparent;
   padding: 9px 17px 5px 17px;
   min-inline-size: 130px;
   max-inline-size: 130px;
-  border: 2px solid var(--font-color);
-  text-align: center;
-  transition: box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.card__like-button:focus {
-  outline: none;
-}
-
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px 0 var(--font-color);
-}
-
-.card__like-button::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  block-size: 100%;
-  inline-size: 100%;
-  background-color: var(--font-color);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.card__like-button:hover {
-  cursor: pointer;
-}
-
-.card__like-button:hover::before {
-  transform: translateX(0);
 }
 
 .button__text {
@@ -323,44 +333,12 @@
 /* ---КНОПКА СОХРАНИТЬ НА ПАМЯТЬ--------------------------------------------- */
 
 .save_button {
-  background-color: var(--background-color);
-  border: 2px solid var(--font-color);
   justify-self: center;
   padding: 15px 18px;
   display: flex;
   align-items: center;
   gap: 8px;
   position: relative;
-  transition: box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-.save_button::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  block-size: 100%;
-  inline-size: 100%;
-  background-color: var(--font-color);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.save_button:focus {
-  outline: none;
-}
-
-.save_button:focus-visible {
-  box-shadow: 2px 2px 0 var(--font-color);
-}
-
-.save_button:hover {
-  cursor: pointer;
-}
-
-.save_button:hover::before {
-  transform: translateX(0);
 }
 
 .discetta {
@@ -386,21 +364,19 @@
 
 #dialog_discetta {
   display: none;
+  padding: 30px;
+ inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
+  min-inline-size: 341px;
+   outline: 2px solid var(--font-color);
+  border: none;
 }
 
 #dialog_discetta[open] {
-  inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
-  min-inline-size: 341px;
-  max-block-size: 191px;
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr min-content;
   column-gap: 20px;
   row-gap: 30px;
-  padding: 30px;
-  outline: 2px solid var(--font-color);
-  border: none;
-  overflow: hidden;
 }
 
 @media (width <= 375px) {
@@ -412,41 +388,9 @@
 .dialog_button {
   grid-column: 1 / 3;
   justify-self: center;
-  background-color: var(--background-color);
   padding: 7px clamp(116px, 111.07px + 1.315vw, 130px);
   inline-size: clamp(261px, 249.732px + 3.0047vw, 293px);
-  transition: box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid var(--font-color);
-}
-
-.dialog_button::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  block-size: 100%;
-  inline-size: 100%;
-  background-color: var(--font-color);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.dialog_button:focus {
-  outline: none;
-}
-
-.dialog_button:focus-visible {
-  box-shadow: 2px 2px 0 var(--font-color);
-}
-
-.dialog_button:hover {
-  cursor: pointer;
-}
-
-.dialog_button:hover::before {
-  transform: translateX(0);
+  text-transform: uppercase;
 }
 
 .discetta_open-dialog {
@@ -461,6 +405,7 @@
   font-size: 14px;
   line-height: 150%;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 #dialog_discetta::backdrop {
