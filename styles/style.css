@@ -49,12 +49,17 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.button:hover {
-  cursor: pointer;
-}
+
+
+@media (hover:hover) {
 
 .button:hover::before {
   transform: translateX(0);
+}
+
+.button:hover {
+  cursor: pointer;
+}
 }
 
 
@@ -312,7 +317,6 @@
   outline: 2px solid var(--font-color);
 }
 
-
 .card__like-button {
   padding: 9px 17px 5px 17px;
   min-inline-size: 130px;
@@ -365,9 +369,9 @@
 #dialog_discetta {
   display: none;
   padding: 30px;
- inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
+  inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
   min-inline-size: 341px;
-   outline: 2px solid var(--font-color);
+  outline: 2px solid var(--font-color);
   border: none;
 }
 
